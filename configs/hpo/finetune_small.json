@@ -1,0 +1,47 @@
+{
+  "init_lr_factor": 10,
+  "params": {
+    "max_lr": {
+      "type": "float",
+      "low": 5e-05,
+      "high": 0.0005,
+      "log": true
+    },
+    "final_lr_factor": {
+      "type": "int",
+      "low": 6,
+      "high": 20,
+      "step": 2
+    },
+    "dropout": {
+      "type": "categorical",
+      "choices": [0.1, 0.2, 0.3]
+    },
+    "attn_out": {
+      "type": "categorical",
+      "choices": [4, 8, 16]
+    },
+    "dist_coff": {
+      "type": "categorical",
+      "choices": [0.1, 0.15, 0.2]
+    },
+    "fine_tune_coff": {
+      "type": "categorical",
+      "choices": [0.0, 0.1, 0.25, 0.5, 0.75]
+    },
+    "bond_drop_rate": {
+      "type": "categorical",
+      "choices": [0.0, 0.05, 0.1]
+    },
+    "ffn_num_layers": {
+      "type": "int",
+      "low": 2,
+      "high": 3,
+      "step": 1
+    },
+    "ffn_hidden_size": {
+      "type": "categorical",
+      "choices": [256, 512, 700]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+変更したファイル
+
+kermt/util/parsing.py:204
+--task_weights を追加しました（nargs='+'、float列）。
+
+kermt/util/utils.py:156
+validate_and_prepare_task_weights(args) を追加しました。
+長さチェック（num_tasks一致）、非負チェック、全ゼロ禁止を実装。
+
+task/train.py:63, task/train.py:107, task/train.py:116, task/train.py:388
+学習lossに task_weights を適用、num_tasks確定後に検証関数を呼ぶよう変更。
+
+task/predict.py:94, task/predict.py:107
+検証時loss（evaluate経由）にも同じ task_weights を適用。
+
+task/run_evaluation.py:14, task/run_evaluation.py:43
+eval 経路でも task_weights の検証を実施。
+
+README.md:157
+--task_weights の説明を追記。
