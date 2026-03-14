@@ -1,5 +1,16 @@
 <h1 align="center">KERMT</h1>
 
+本家KERMT（[リンク](https://github.com/NVIDIA-Digital-Bio/KERMT)）に独自の改良を加えました。
+* MTL (Multi-Task Learning) 実行時にタスクごとの重み付けができるように変更しました
+* HPO Finetuning 実行時の挙動を変更しました
+  - `fine_tune_coff` を HPO 探索対象に追加しました（事前学習済み本体の学習率スケーリング）
+  - データ数に応じてデフォルトの探索範囲を定義しました（`configs/hpo/finetune_[size].json`）
+  - `--hpo_profile small|medium|large` により簡易的に設定することができます
+
+> 以下のREADMEは、オリジナルの内容をベースに一部改変しています
+
+---
+
 This is the official code repository for the paper titled [Multitask finetuning and acceleration of chemical pretrained models for small molecule drug property prediction](https://arxiv.org/abs/2510.12719).
 
 <p align="center">
