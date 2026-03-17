@@ -182,6 +182,7 @@ python main_hpo.py finetune --data_path tests/data/finetune/train.csv \
                             --split_type scaffold_balanced \
                             --ensemble_size 1 \
                             --num_folds 1 \
+                            --task_weights 1.0 0.5 2.0 \
                             --no_features_scaling \
                             --weight_decay 5e-06 \
                             --fine_tune_coff 1.0 \
@@ -192,6 +193,7 @@ python main_hpo.py finetune --data_path tests/data/finetune/train.csv \
                             --hpo_profile medium
 ```
 The number of trials can be set using `--n_trials` flag and the number of epochs per trial can be set using `--epochs` flag.
+`--task_weights` can also be used during HPO (e.g., `--task_weights 1.0 0.5 2.0`), and the number of weights must match the number of target columns.
 
 The HPO search range can be selected without editing `main_hpo.py`:
 - Built-in profiles: `--hpo_profile small|medium|large`
@@ -218,6 +220,7 @@ python main_hpo.py finetune --data_path tests/data/finetune/train.csv \
                             --split_type scaffold_balanced \
                             --ensemble_size 1 \
                             --num_folds 1 \
+                            --task_weights 1.0 0.5 2.0 \
                             --no_features_scaling \
                             --epochs 100 \
                             --n_trials 100 \
